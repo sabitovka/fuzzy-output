@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="1273.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <SplitPane dividerPositions="0.7053571428571429" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+            <HBox prefHeight="380.0" prefWidth="1044.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="444.0" prefWidth="1364.0">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="425.0" text="Интенсивность обращений к серверу" wrapText="true">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                              </Label>
+                              <LineChart fx:id="intenseChart" layoutX="10.0" layoutY="38.0">
+                                 <xAxis>
+                                    <NumberAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="444.0" prefWidth="1364.0">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Количество оперативной памяти">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <LineChart fx:id="ramChart">
+                                <xAxis>
+                                  <NumberAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="444.0" prefWidth="1364.0">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Частота процессора">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <LineChart fx:id="cpuChart">
+                                 <xAxis>
+                                    <NumberAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="1271.0">
+               <children>
+                  <Button layoutX="21.0" layoutY="268.0" mnemonicParsing="false" onAction="#actionCalculate" prefHeight="25.0" prefWidth="114.0" text="Рассчитать" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="21.0" />
+                  <Label layoutX="21.0" layoutY="196.0" text="Ин-ть обращений к серверу (запросов/мин)" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="21.0" />
+                  <Label layoutX="21.0" layoutY="237.0" text="Количество оперативной памяти (Мб)" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="21.0" />
+                  <Spinner fx:id="intensity" editable="true" layoutX="291.0" layoutY="272.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="291.0" />
+                  <Spinner fx:id="ramAmount" editable="true" layoutX="291.0" layoutY="313.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="291.0" />
+                  <Label fx:id="result" layoutX="210.0" layoutY="489.0" text="Результат:" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="210.0" />
+                  <TextField fx:id="resultTextField" editable="false" layoutX="291.0" layoutY="485.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="291.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Закрыть" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Настройки">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#actionOpenSettings" text="Редактор переменных" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Помощь">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
