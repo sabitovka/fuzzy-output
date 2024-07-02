@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-<a href=".gitassets/README-RU.md">RU</a> | <a>EN</a>
+<a href=".gitassets/pages/README-RU.md">RU</a> | <a>EN</a>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -28,7 +28,7 @@
 
 ## About
 
-![Program screenshot](.gitassets/third-testing-set.png)
+![Program screenshot](.gitassets/images/third-testing-set.png)
 
 This project is a course work on the topic "Management system based on the principles of fuzzy set". It was carried out in the course of master's degree in FSBEI HE DonNTU in 2023. The purpose of the coursework was to master the basic concepts and principles of building decision-making systems using fuzzy logic, the study of basic design methodologies and ways to implement such systems.
 
@@ -72,7 +72,7 @@ Make sure you have the following components installed:
 
 The developed system is designed to set the CPU frequency on the basis of fuzzy rules of the intensity of accesses to the server and the amount of remaining RAM. Information about the current number of accesses to the server and the intensity of accesses is entered on the form, and then the recommended CPU frequency is displayed
 
-![Example of usage](.gitassets/second-testing-set.png)
+![Example of usage](.gitassets/images/second-testing-set.png)
 
 Fuzzy rules, which are represented by terms of linguistic variables and membership functions, can be edited. For this purpose the settings form is used. Each linguistic variable can be extended with a set of terms. Each term can be set to one of the following membership functions:
 
@@ -80,9 +80,7 @@ Fuzzy rules, which are represented by terms of linguistic variables and membersh
 * Linear
 * Exponential
 
-![Форма настроек](.gitassets/settings-form-1.png)
-
-_More usage examples are described in the [Testing](#) section_
+![Settings form](.gitassets/images/settings-form-1.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
