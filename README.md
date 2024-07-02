@@ -14,9 +14,7 @@
   <p align="center">
     A control system based on the principles of a fuzzy set
     <br />
-    <a href="#"><strong>Description »</strong></a> ▪
-    <a href="#"><strong>Development »</strong></a> ▪
-    <a href="#"><strong>Testing »</strong></a>
+    <a href="#"><strong>Description and development »</strong></a>
     <br />
     <br />
   </p>

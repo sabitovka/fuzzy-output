@@ -14,9 +14,7 @@
   <p align="center">
     Система управления на основе принципов нечеткого множества
     <br />
-    <a href="#"><strong>Описание »</strong></a> ▪
-    <a href="#"><strong>Разработка »</strong></a> ▪
-    <a href="#"><strong>Тестирование »</strong></a>
+    <a href="#"><strong>Описание и разработка »</strong></a>
     <br />
     <br />
   </p>
