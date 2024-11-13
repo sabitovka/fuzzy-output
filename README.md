@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-<a href=".gitassets/pages/README-RU.md">RU</a> | <a>EN</a>
+<a>RU</a> | <a href=".gitassets/pages/README-EN.md">EN</a>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -12,105 +12,148 @@
   <h3 align="center">Fuzzy-Output*</h3>
 
   <p align="center">
-    A control system based on the principles of a fuzzy set
+    Система управления на основе принципов нечеткого множества
     <br />
-    <a href="#"><strong>Description and development »</strong></a>
+    <a href="#"><strong>Описание и разработка »</strong></a>
     <br />
     <br />
   </p>
   <p align="right">
-    <small><i>*The project was carried out within the framework of the discipline course "Fuzzy methods of data processing and analysis" in the course of study at</br><strong> Donetsk National Technical University</strong></i></small>
+    <small><i>*Проект выполнен в рамках курса дисциплины «Нечеткие методы обработки и анализа данных» в ходе обучения в</br><strong>Донецком Национальном техническом университете</strong></i></small>
   </p>
 </div>
 
 
-## About
+## О проекте
 
-![Program screenshot](.gitassets/images/third-testing-set.png)
+![Скриншот из программы](.gitassets/images/third-testing-set.png)
 
-This project is a course work on the topic "Management system based on the principles of fuzzy set". It was carried out in the course of master's degree in FSBEI HE DonNTU in 2023. The purpose of the coursework was to master the basic concepts and principles of building decision-making systems using fuzzy logic, the study of basic design methodologies and ways to implement such systems.
+Данный проект представляет собой курсовую работу на тему «Система управления на основе принципов нечеткого множества». Выполнена в ходе обучения в магистратуре в ФГБОУ ВО ДонНТУ в 2023 году. Целью выполнения курсовой работы было освоение основных понятий и принципов построения систем принятия решений с использованием нечеткой логики, изучение основных методологий проектирования и способов реализации таких систем.
 
-The main task of this course work was to develop a system that allows to analyse the server input data in real time and make informed decisions based on the implemented fuzzy logic algorithms.
+Основной задачей данной курсовой работы была разработка системы, позволяющей проводить анализ входных данных сервера в режиме реального времени и принимать обоснованные решения, ориентируясь на реализованные алгоритмы нечеткой логики.
 
-The system was implemented using the Java programming language and the JavaFX library for creating user interfaces.
+Реализация системы выполнялась с использованием языка программирования Java и библиотекой для создания пользовательских интерфейсов JavaFX.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Назначение системы
+
+Разрабатываемая система предназначена для автоматического разгона частоты центрального процессора сервера в зависимости от различных параметров окружающей среды, в их числе: количество обрабатываемых запросов и количество оперативной памяти. Данная система работает с нечеткой логикой и называется системой с нечетким выводом. Данная система может выступать как часть автоматической надстройки на сервере для оптимизации запросов.
+
+Понятие нечеткого вывода занимает ключевое положение в нечеткой логике и теории управления нечеткими системами. В контексте нечеткой логики в системах управления, систему нечеткого вывода можно определить как процесс формирования нечетких выводов о необходимом управлении объектом на основе размытых условий или предпосылок, содержащих информацию о текущем состоянии объекта.
+
+![Общая схема системы нечеткого вывода](.gitassets/images/fuzzy-schema.jpg)
+
+Цель создания нечеткой информационной системы заключается в достижении нижеперечисленных показателей и результатов.
+1.	Оптимизация работы серверов. Целью системы является обеспечение оптимального функционирования серверных систем. Достижение этой цели будет измеряться улучшением эффективности использования вычислительных ресурсов и снижением операционных затрат.
+
+2.	Увеличение эффективности вычислительных ресурсов. Система стремится к повышению эффективности использования вычислительных ресурсов, предоставляя необходимые ресурсы в зависимости от текущей нагрузки и обеспечивая стабильность работы серверов в условиях переменной нагрузки.
+
+3.	Снижение операционных затрат Целью системы является снижение операционных затрат за счет оптимизации работы вычислительных систем и предотвращения избыточного потребления ресурсов.
+
+4.	Обеспечение стабильности работы серверов. Система создается с учетом обеспечения стабильности работы серверов в условиях переменной нагрузки. Адаптивное управление параметрами сервера на основе анализа данных позволяет минимизировать риски возможных сбоев и обеспечивать бесперебойную работу.
+
+В общем случае система должна выдавать приближенный к оптимальному значению результат.
 
 
-## Getting started
+### Формирование базы правил системы нечеткого вывода
 
-To start a local copy of the system, follow these simple steps.
+База правил системы нечеткого вывода предназначена для формального представления эмпирических знаний экспертов в той или иной проблемной области. База правил системы нечеткого вывода представляет собой конечную совокупность нечетких правил, согласованную относительно используемых в них лингвистических переменных.
 
-### Components
+В системах нечеткого вывода лингвистические переменные, которые используются в нечетких высказываниях подусловий нечетких правил, часто называют входными лингвистическими переменными. А переменные, которые используются в нечетких высказываниях подзаключений правил нечетких продукций, часто называют выходными лингвистическими переменными [[1](http://nrsu.bstu.ru/chap27.html)].
 
-Make sure you have the following components installed:
+В частном случае, имеем две входные лингвистические переменные: интенсивность обращений к серверу (запросов/мин), количество оперативной памяти (Мб) и  выходную – частота процессора.
+
+![Матрица соответствия правил](.gitassets/images/rules.png)
+
+### Алгоритм решения задачи
+
+В качестве алгоритма решения задачи представим диаграмму деятельности между подсистемами, отображающую общий процесс работы программ без акцентирования внимания на деталях
+
+![Алгоритм решения задачи](.gitassets/images/algorithm.png)
+
+### Объектная модель
+
+Разработку объектной модели начнем с описания классов на одноименной диаграмме. В процессе разработки заранее отделим алгоритмическую часть от интерфейсной, чтобы была возможность применить алгоритм на другом представлении и не быть зависимым от интерфейса пользователя
+
+![Диаграмма классов](.gitassets/images/class-diagram.png)
+
+<p align="right">(<a href="#readme-top">наверх</a>)</p>
+
+
+## Приступая к работе
+
+Чтобы запустить локальную копию системы, выполните следующие простые действия.
+
+### Компоненты
+
+Убедитесь, что у вас установлены следующие компоненты:
 
 * Oracle Java 11
 * Apache Maven 3.9.8
 
-### Installing
+### Установка
 
-1. Clone the repository
+1. Клонируйте репозиторий
   ```sh
-    git clone https://github.com/sabitovka/fuzzy-output
+    git clone https://gitflic.ru/project/sabitovka/fuzzy-output
   ```
-2. Compile the project using Maven
+2. Скомпилируйте проект с помощью Maven
   ```sh
     mvn clean compile
   ```
-3. Run the system
+3. Запустите систему
   ```sh
     mvn javafx:run
   ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">наверх</a>)</p>
 
 
-## Usage
+## Использование
 
-The developed system is designed to set the CPU frequency on the basis of fuzzy rules of the intensity of accesses to the server and the amount of remaining RAM. Information about the current number of accesses to the server and the intensity of accesses is entered on the form, and then the recommended CPU frequency is displayed
+Разработанная система предназначена для установки частоты центрального процессора на основе нечетких правил интенсивности обращений к серверу и количества оставшейся ОЗУ. На форму заносится информация о текущем количестве обращений к серверу и интенсивности обращений, после чего отображается рекомендованная частота процессора
 
-![Example of usage](.gitassets/images/second-testing-set.png)
-
-Fuzzy rules, which are represented by terms of linguistic variables and membership functions, can be edited. For this purpose the settings form is used. Each linguistic variable can be extended with a set of terms. Each term can be set to one of the following membership functions:
-
-* Quadratic
-* Linear
-* Exponential
-
-![Settings form](.gitassets/images/settings-form-1.png)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+![Пример использования](.gitassets/images/second-testing-set.png)
 
 
-## Contribution
+Нечеткие правила, которые представлены термами лингвистических переменных и функциями принадлежности можно редактировать. Для этого исползьуется форма настроек. Каждую лингвистическую переменную можно расширить набором термов. Каждый терм можно настроить на один из следующих функций принадлежности:
 
-Contributions are what make the open source community a great place to learn, inspire and create. I **highly appreciate any contribution you make**.
+* Квадратичная
+* Линейная
+* Экспоненциальная
 
-If you have suggestions for improving the system, make a Fork and create a Merge Request. You can also create an issue with the tag "enhancement"
+![Форма настроек](.gitassets/images/settings-form-1.png)
 
-1. Fork the project
-2. Create a new branch of the feature (`git checkout -b feature/your-feature`)
-3. Commit the changes (`git commit -m 'Added new feature'`)
-4. Push the changes (`git push origin feature/your-feature`)
-5. Create a merge request
+<p align="right">(<a href="#readme-top">наверх</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Licence
+## Вклад
 
-Distributed under the MIT licence. See the file "LICENSE.txt" for more information.
+Вклады - это то, что делает сообщество разработчиков с открытым исходным кодом замечательным местом для обучения, вдохновения и творчества. Я **высоко оценю любой ваш вклад**.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Если у вас есть предложения по улучшению системы, сделайте Форк и создайте Запрос на слияние. Также вы можете создать issue с тегом "enhancement"
 
-## Contacts
+1. Сделайте Форк проекта
+2. Создайте новую ветку фичи (`git checkout -b feature/your-feature`)
+3. Закоммитте изменения (`git commit -m 'Добавлена новая фича'`)
+4. Запуште изменения (`git push origin feature/your-feature`)
+5. Создайте запрос на слияние
 
-Karim Sabitov
+<p align="right">(<a href="#readme-top">наверх</a>)</p>
+
+## Лицензия
+
+Распространяется по лицензии MIT. Дополнительную информацию смотрите в файле "LICENSE.txt`.
+
+<p align="right">(<a href="#readme-top">наверх</a>)</p>
+
+## Контакты
+
+Карим Сабитов
 * [VK](https://vk.com/id87074050)
 * [karim.sab@yandex.ru](mailto://karim.sab@yandex.ru)
 
-Other links to the project:
+Другие ссылки на проект:
 * GitHub - [https://github.com/sabitovka/fuzzy-output](https://github.com/sabitovka/fuzzy-output)
 * GitFlic - [https://gitflic.ru/project/sabitovka/fuzzy-output](https://gitflic.ru/project/sabitovka/fuzzy-output)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">наверх</a>)</p>
